@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import Web3 from 'web3'
+import Web3 from 'web3';
 import './App.css';
-import Artsell from '../abis/Artsell.json'
+import Artsell from '../abis/Artsell.json';
 /*import logo from '../logo.jpg';*/
 import Fortmatic from 'fortmatic'; 
+
+
 const ipfsClient = require('ipfs-http-client')
 const ipfs = ipfsClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' })
+const fm = new Fortmatic('pk_test_3ECE8EAF006F451A','kovan');
 
-const fm = new Fortmatic('pk_test_A7AC42988FDCACFE','kovan');
+
 
 class App extends Component 
 {
@@ -41,6 +44,11 @@ class App extends Component
   {
     const web3=window.web3
     // Load account
+    fm.configure({ primaryLoginOption: 'phone' }).then(() => {
+    fm.user.login().then(() => {
+     web3.eth.getAccounts().then(console.log);// ['0x...']
+      });
+    });
     const accounts = await web3.eth.getAccounts()
     this.setState({ account: accounts[0] })
     const Balance =await web3.eth.getBalance(accounts[0])
@@ -124,6 +132,9 @@ class App extends Component
     })
   }
 
+  handleLogoutUser = () => {
+    fm.user.logout();
+  }
 
 
   createProduct(name, price,memeHash) 
@@ -143,7 +154,7 @@ class App extends Component
     {
       this.setState({ loading: false })
     })
-    var emid=window.prompt("Enter email ID :")
+    /*var emid=window.prompt("Enter email ID :")
     const nodemailer = require('nodemailer');
     const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -166,33 +177,55 @@ class App extends Component
         console.log('Email sent: ' + info.response);
       }
     });
+    */
   }
+
   render() 
   {
     return (
 
       <div>
+  
       
-       <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+       <div class="navbar">
           
-          <ul className="navbar-nav px-3">
-            <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
-              <small className="text-white"><span id="account"><h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Account </b>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{this.state.account}</h4></span></small>
-            </li>
-          </ul>
-          <ul className="navbar-nav px-3">
-           <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
-           <small className="text-white"><span id="account"><h4 ><b>Balance</b>:{this.state.balanceacc}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4></span></small>
-            </li>
-          </ul>
           
-        </nav>
+              <small className="text-white"><span id="account"><h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Account </b>:&nbsp;{this.state.account}</h4></span></small>
+            
+          
+           <small className="text-white"><span id="account"><h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Balance</b>:&nbsp;&nbsp;{this.state.balanceacc}&nbsp;Ether</h4></span></small>
+              
+          
+        </div>
+        <div>
+        
+
+
+      
+          <main role="main">    
+          <div align="center">    
+          <div className="content" align="center">
+                <p>
+                &nbsp;&nbsp;&nbsp;
+                 &nbsp;&nbsp;&nbsp;
+          </p>
          
-        <div class="sidenav">
-               <center><h5>ADD ART</h5></center>
-               <p>
-               &nbsp;
-               </p>
+          <table className="table" align="center">
+           <p>
+                &nbsp;&nbsp;&nbsp;
+                 &nbsp;&nbsp;&nbsp;
+          </p>
+          <p>
+                &nbsp;&nbsp;&nbsp;
+                 &nbsp;&nbsp;&nbsp;
+          </p>
+          <p>
+                &nbsp;&nbsp;&nbsp;
+                 &nbsp;&nbsp;&nbsp;
+          </p>
+          <div id="rap">
+              <h5>ADD ART</h5>
+              
               <form onSubmit={this.onSubmit} >
                 
                 <div className="form-group mr-sm-2">
@@ -223,23 +256,19 @@ class App extends Component
                     onChange={this.captureFile} 
                     required/>
                 </div>  
-               <p>
-               &nbsp;
-               </p> 
                 <center><button type="submit" className="btn btn-primary">Add ART</button>  </center>    
               </form>
+               <p>
+                &nbsp;&nbsp;&nbsp;
+                 &nbsp;&nbsp;&nbsp;
+          </p>
+          <p>
+                &nbsp;&nbsp;&nbsp;
+                 &nbsp;&nbsp;&nbsp;
+          </p>
           </div>   
-        <div className="container-fluid mt-5">
-          <div className="row">
-            <main role="main" className="col-lg-12 d-flex">    
-            <div id="content">
-              
-          <div class="col-sm-6">
-          <h2><big>BUY ART</big></h2>
-         
-          <table className="table">
-            
-            <tbody id="productList" >
+            <tbody id="productList" align="center">
+             <center><h2 align="center">BUY ART</h2></center>
             { this.state.products.map((product,key) => 
               {
                 return(
@@ -253,7 +282,7 @@ class App extends Component
                   </tr>
                   </table>
                   <p>
-                  <img src={product.memeHash} width="700px" height="400px" alt="IPFS ERROR NOT FOUND" />
+                  <img src={product.memeHash} width="800px" height="500px" alt="IPFS ERROR NOT FOUND" />
                   </p>
                   <p>
                   </p>
@@ -282,17 +311,16 @@ class App extends Component
                 </tbody>
 
                 </table>
-                <p>
-                &nbsp;&nbsp;&nbsp;
-                </p>
+               
                 </div>
             </div>  
             </main>
           </div>
         </div>
-      </div>
+     
     );
   }
 }
+
 
 export default App;
