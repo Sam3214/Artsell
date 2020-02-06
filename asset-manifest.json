@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Artsell/static/css/main.14ec70ea.chunk.css",
+    "main.js": "/Artsell/static/js/main.2c70c98f.chunk.js",
+    "main.js.map": "/Artsell/static/js/main.2c70c98f.chunk.js.map",
+    "runtime-main.js": "/Artsell/static/js/runtime-main.1b90f7d6.js",
+    "runtime-main.js.map": "/Artsell/static/js/runtime-main.1b90f7d6.js.map",
+    "static/css/2.9720967d.chunk.css": "/Artsell/static/css/2.9720967d.chunk.css",
+    "static/js/2.7c240a1d.chunk.js": "/Artsell/static/js/2.7c240a1d.chunk.js",
+    "static/js/2.7c240a1d.chunk.js.map": "/Artsell/static/js/2.7c240a1d.chunk.js.map",
+    "index.html": "/Artsell/index.html",
+    "precache-manifest.6f35e9b4ccabd2206af320d55da5bda8.js": "/Artsell/precache-manifest.6f35e9b4ccabd2206af320d55da5bda8.js",
+    "service-worker.js": "/Artsell/service-worker.js",
+    "static/css/2.9720967d.chunk.css.map": "/Artsell/static/css/2.9720967d.chunk.css.map",
+    "static/css/main.14ec70ea.chunk.css.map": "/Artsell/static/css/main.14ec70ea.chunk.css.map",
+    "static/js/2.7c240a1d.chunk.js.LICENSE": "/Artsell/static/js/2.7c240a1d.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1b90f7d6.js",
+    "static/css/2.9720967d.chunk.css",
+    "static/js/2.7c240a1d.chunk.js",
+    "static/css/main.14ec70ea.chunk.css",
+    "static/js/main.2c70c98f.chunk.js"
+  ]
+}
