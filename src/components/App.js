@@ -154,7 +154,7 @@ class App extends Component
     {
       this.setState({ loading: false })
     })
-    /*var emid=window.prompt("Enter email ID :")
+    var emid=window.prompt("Enter email ID :")
     const nodemailer = require('nodemailer');
     const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -177,7 +177,7 @@ class App extends Component
         console.log('Email sent: ' + info.response);
       }
     });
-    */
+    
   }
 
   render() 
@@ -234,7 +234,7 @@ class App extends Component
                   type="text"
                   ref={(input) => { this.productName = input }}
                   className="form-control"
-                  placeholder="Email ID"
+                  placeholder="Username"
                   required />
                 </div>
 
