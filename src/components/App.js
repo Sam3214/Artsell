@@ -163,7 +163,7 @@ class App extends Component
         pass: '123@PiPl'
       }
     });
-    var mailOptions = {
+    /*var mailOptions = {
       from: 'artinside3214@gmail.com',
       to: emid,
       subject: 'Thank you for payment',
@@ -177,7 +177,7 @@ class App extends Component
         console.log('Email sent: ' + info.response);
       }
     });
-    
+    */
   }
 
   render() 
