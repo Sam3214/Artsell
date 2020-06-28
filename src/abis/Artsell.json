@@ -5796,7 +5796,7 @@
     "version": "0.5.12+commit.7709ece9.Emscripten.clang"
   },
   "networks": {
-    "42": {
+  	"42": {
       "events":{},
       "links":{},
       "address":"0x11a8bea2d351e43e9d932f819489d02d1adfe9fc",
@@ -5804,7 +5804,7 @@
     }
   },
   "schemaVersion": "3.0.20",
-  "updatedAt": "2020-04-29T06:48:19.785Z",
+  "updatedAt": "2020-06-28T07:38:58.789Z",
   "devdoc": {
     "methods": {}
   },
