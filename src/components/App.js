@@ -283,7 +283,7 @@ class App extends Component
                   </table>
                   <p>
                   <img src={product.memeHash} width="800px" height="500px" alt="IPFS ERROR NOT FOUND" />
-                    <p>{product.memeHash}</p>
+                    <p><b>Hash:{product.memeHash}</b></p>
                   </p>
                   <p>
                   </p>
