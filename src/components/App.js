@@ -279,12 +279,13 @@ class App extends Component
                   <td></td>
                   <td></td>
                   <td><b>Owner:</b><u>{product.owner}</u></td>
+                  <td><b>Hash:{product.memeHash}</b></td>
                   </tr>
                   </table>
                   <p>
                   <img src={product.memeHash} width="800px" height="500px" alt="IPFS ERROR NOT FOUND" />
                   </p>
-                  <p><b>Hash:{product.memeHash}</b></p>
+                  
                   <p>
                   </p>
                   <p>
