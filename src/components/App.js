@@ -268,7 +268,7 @@ class App extends Component
           </p>
           </div>   
             <tbody id="productList" align="center">
-             <center><h2 align="center">BUY ART</h2></center>
+             <center><h2 align="center">BUY ARTs</h2></center>
             { this.state.products.map((product,key) => 
               {
                 return(
